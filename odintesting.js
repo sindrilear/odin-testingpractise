@@ -62,5 +62,35 @@ function caesarCipher(string, shift) {
   return caesarString
 };
 
-console.log(caesarCipher('xyz', 3))
-module.exports = { sum, capitalize, reverseString, calculator, caesarCipher }
+function analyzeArray(array) {
+  const len = array.length;
+  let average = 0;
+  let min = array[0];
+  let max = array[0];
+  let sum = 0;
+
+  for (i = 0; i < len; i++) {
+    if (max < array[i]) {
+      max = array[i]
+    }
+    if (min > array[i]) {
+      min = array[i]
+    }
+    sum = sum + array[i]
+    }
+  average = sum / len;
+
+  const object = {
+    average: average,
+    min: min,
+    max: max,
+    length: len
+  };
+
+  return object
+  }
+
+console.log(analyzeArray([1,8,3,4,2,6]))
+
+
+module.exports = { sum, capitalize, reverseString, calculator, caesarCipher, analyzeArray }

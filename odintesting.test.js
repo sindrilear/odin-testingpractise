@@ -1,4 +1,4 @@
-const { sum, capitalize, reverseString, calculator, caesarCipher } = require('./odintesting')
+const { sum, capitalize, reverseString, calculator, caesarCipher, analyzeArray } = require('./odintesting')
 
 test('two plus two is four', () => {
   expect(sum(2, 2)).toBe(4);
@@ -39,4 +39,21 @@ test ('casarCipher test case preservation', () => {
 test ('casarCipher test punctuation', () => {
   expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!')
 });
+
+test ('analyzeArray test average', () => {
+  expect(analyzeArray([1,8,3,4,2,6]).average).toBe(4)
+});
+
+test ('analyzeArray test min', () => {
+  expect(analyzeArray([1,8,3,4,2,6]).min).toBe(1)
+});
+
+test ('analyzeArray test max', () => {
+  expect(analyzeArray([1,8,3,4,2,6]).max).toBe(8)
+});
+
+test ('analyzeArray test max', () => {
+  expect(analyzeArray([1,8,3,4,2,6]).length).toBe(6)
+});
+
 
